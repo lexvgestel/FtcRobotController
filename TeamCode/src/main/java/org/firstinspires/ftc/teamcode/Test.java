@@ -5,5 +5,5 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
 @TeleOp
 public class Test {
-    private DcMotor frontLeftDrive = null;
+
 }
