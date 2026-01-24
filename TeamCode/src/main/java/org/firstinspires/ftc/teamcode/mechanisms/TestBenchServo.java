@@ -12,6 +12,9 @@ public class TestBenchServo {
     public void init(HardwareMap hwm) {
         servoPos = hwm.get(Servo.class, "servoPos");
         servoRot = hwm.get(CRServo.class, "servoRot");
+        servoPos.scaleRange(0.5,0.9);
+        servoPos.setDirection(Servo.Direction.REVERSE);
+        servoRot.setDirection(CRServo.Direction.REVERSE);
     }
 
     public void setServoPos(double angle) {
