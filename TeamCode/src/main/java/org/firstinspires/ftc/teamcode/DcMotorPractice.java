@@ -10,31 +10,31 @@ import org.firstinspires.ftc.teamcode.mechanisms.TestBench;
 @TeleOp
 public class DcMotorPractice extends OpMode {
 
-    TestBench DcMotor = new TestBench();
+    TestBench bench = new TestBench();
     TestBench touchSensor = new TestBench();
 
     @Override
     public void init() {
-        DcMotor.init(hardwareMap);
+        bench.init(hardwareMap);
         touchSensor.init(hardwareMap);
     }
 
     @Override
     public void loop() {
         if (touchSensor.isTouchSensorPressed()) {
-            DcMotor.setMotorSpeed(0.5);
+            bench.setMotorSpeed(0.5);
         }
         else {
-            DcMotor.setMotorSpeed(0.0);
+            bench.setMotorSpeed(0.0);
         }
         if (gamepad1.a) {
-            DcMotor.setMotorZeroBehaviour(com.qualcomm.robotcore.hardware.DcMotor.ZeroPowerBehavior.BRAKE);
+            bench.setMotorZeroBehaviour(DcMotor.ZeroPowerBehavior.BRAKE);
         }
         else if (gamepad1.b) {
-            DcMotor.setMotorZeroBehaviour(com.qualcomm.robotcore.hardware.DcMotor.ZeroPowerBehavior.FLOAT);
+            bench.setMotorZeroBehaviour(DcMotor.ZeroPowerBehavior.FLOAT);
         }
 
-        telemetry.addData("Motor Revs", DcMotor.getMotorRevs());
+        telemetry.addData("Motor Revs", bench.getMotorRevs());
     }
 
 }
