@@ -21,7 +21,8 @@ public class ServoPractice extends OpMode {
         if(gamepad1.a) {
             bench.setServoPos(0.0);
         }
-        else if (gamepad1.b) {
+        else
+            if (gamepad1.b) {
             bench.setServoPos(1.0);
         }
 
